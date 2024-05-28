@@ -397,6 +397,7 @@ def action_client(action_name, action_msg, goal_msg, callbacks=None):
     active_handle = None
     feedback_handle = None
     last_sent_goal_handle = None
+    cancel_handle = None
 
     if callbacks:
         if 'done_cb' in callbacks.keys():
@@ -406,7 +407,12 @@ def action_client(action_name, action_msg, goal_msg, callbacks=None):
         if 'feedback_cb' in callbacks.keys():
             feedback_handle = callbacks['feedback_cb']
         if 'last_sent_goal_cb' in callbacks.keys():
+            print(f'last_sent_goal_cb[ {callbacks["last_sent_goal_cb"]}]')
+            rospy.loginfo(f'last_sent_goal_cb[ {callbacks["last_sent_goal_cb"]}]')
             last_sent_goal_handle = callbacks['last_sent_goal_cb']
+
+        if 'cancel_cb' in callbacks.keys():
+            cancel_handle = callbacks['cancel_cb']
 
     # Create widget
     widget_list = []
@@ -438,6 +444,8 @@ def action_client(action_name, action_msg, goal_msg, callbacks=None):
         thread_map[action_name] = False
         rospy.loginfo(f'[{action_name.upper()}] The action has been cancelled.')
         a_client.cancel_goal()
+        if (cancel_handle is not None):
+            cancel_handle()
 
     def thread_target():
         while thread_map[action_name]:
