@@ -3,8 +3,10 @@
 In order to run this notebook, you need to setup the ros workspace. The steps to set it up is as follows: 
 
 ## download, source and make the workspace
-`git clone https://github.com/mehhdiii/assignment-2-with-monitoring-package`
-`cd %workspace-folder% && source devel/setup.bash && catkin_make`
+```
+git clone https://github.com/mehhdiii/assignment-2-with-monitoring-package
+cd %workspace-folder% && source devel/setup.bash && catkin_make
+```
 
 ## run the simulation
 
