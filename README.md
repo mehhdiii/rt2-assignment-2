@@ -1,6 +1,6 @@
 
 ## Important note
-Please note that we use a patched jupros implementation (contained in this repo), so make sure that the notebook folder also contains the python file (`jupyros_action_client_patched.py`). The patch fixes a bug in the jupyros action_client ([fix PR is also opened on official Jupyros repository](https://github.com/RoboStack/jupyter-ros/pull/163)) implements some missing functionality in jupyros action_client (such as sent goal callback, cancelled goal callback etc.)
+Please note that we use a patched jupros implementation (contained in this repo), so make sure that the notebook folder also contains the python file (`jupyros_action_client_patched.py`). The patch fixes a bug in the jupyros action_client ([fix PR is also opened on official Jupyros repository](https://github.com/RoboStack/jupyter-ros/pull/163)) and also implements some missing functionality in jupyros action_client (such as sent goal callback, cancelled goal callback etc.)
 
 
 # How to run this notebook
