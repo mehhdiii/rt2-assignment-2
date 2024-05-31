@@ -14,6 +14,8 @@ cd %workspace-folder% && source devel/setup.bash && catkin_make
 
 ## run the notebook as follows: 
 
-Make sure the terminal has the workspace sourced. Then launch jupyter notebook using the following command: 
+Make sure the terminal has the workspace sourced. Then launch jupyter using the following command: 
 
 `jupyter notebook --allow-root --ip 0.0.0.0`
+
+Now you can open the notebook from jupyter.
